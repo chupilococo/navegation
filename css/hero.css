@@ -1,0 +1,143 @@
+@keyframes heroanimation {
+    0%,100%{
+        background-color: var(--color_danilo);
+    }
+    20%{
+        background-color: var(--color_franco);
+    }
+    40%{
+        background-color: var(--color_nicolas);
+    }
+    60%{
+        background-color: var(--color_fernando);
+    }
+    80%{
+        background-color: var(--color_leandro);
+    }
+
+    0%,15%{
+        left: 0;
+        right: 98%;
+        bottom: 0;
+        top: 0;
+    }
+    20%{
+        right: 0;
+        bottom: 0;
+    }
+    26%{
+        bottom: 0;
+        top: 0;
+    }
+    50%{
+        top:0;
+        bottom: 94%;
+        right: 0;
+    }
+    70%{
+        left: 0;
+        right: 0;
+        bottom: 94%;
+        top: 0;
+    }
+    74%,80%{
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+    81%,100%{
+        left: 98%;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+}
+
+
+@keyframes scrollHint {
+    0%, 70%,100% {
+        top: .7em;
+    }
+
+    30%{
+        top: 2.5em;
+    }
+}
+
+.hero{
+    position: relative;
+}
+
+@keyframes reveal {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+.hero h2{
+    padding: 1em;
+    display: grid;
+    place-items: center;
+    height: 4em;
+    position: relative;
+    z-index: 1;
+}
+.hero h2::before{
+    border-radius: 5px;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background-color: var(--color_danilo);
+    animation: heroanimation 15s alternate infinite ;
+}
+
+.hero .drop{
+    opacity: 0;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    height: 4.2em;
+    width: 3.5em;
+    border-radius: 35%;
+    border: rgba(75, 75, 75, 0.78) solid 3px;
+    left: 40%;
+    transform: translateX(-50%);
+    bottom: 1em;
+    box-shadow: #545454 0 0 25px,inset #545454 0 0 15px;
+    animation: reveal 10s ease-in infinite;
+    /*animation-delay: 15s;*/
+}
+
+.hero .drop a {
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.drop::before,.drop::after{
+    content: '';
+    box-shadow: #747474 0 0 5px;
+    position: absolute;
+    display: inline;
+    height: .8em;
+    width: 2px;
+    background-color: rgba(116, 116, 116, 0.32);
+    top: 2.25em;
+    border-radius: 5px;
+    animation: scrollHint 5000ms infinite;
+}
+
+.drop::before{
+    transform: skewX(40deg) translateX(-.35em);
+
+}
+.drop::after{
+    transform: skewX(-40deg) translateX(.35em);
+}

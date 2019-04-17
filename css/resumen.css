@@ -1,0 +1,78 @@
+.calendario_content_resumen{
+    background-color: white;
+    height: 70vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
+
+}
+
+.calendario_content_resumen .calendario_resumen{
+    grid-column: 3/7;
+    grid-row: 3/7;
+    color: #787878;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    box-shadow: #333333 0  0 25px;
+    z-index: 1;
+}
+
+
+
+.calendario_resumen_form{
+    color: gray;
+    grid-column: 1/4;
+    grid-row: 1/7;
+    display: grid;
+    border: darkred solid 2px;
+}
+
+
+.calendario_resumen_form input[type='number']::-webkit-inner-spin-button{
+    font-size: 2em;
+}
+.calendario_resumen_form select{
+    background-image: url("https://uploads-ssl.webflow.com/56a0aec42f2ef2655bb8db60/596715c34b70d8549f2cb245_two-down-chevron.png");
+    background-blend-mode: color-burn;
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.calendario_resumen_form .formInput, .formButton {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 3em;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #3CBC8D;
+    font-size: 2em;
+}
+
+.calendario_resumen_form label{
+    box-sizing: border-box;
+    display: block;
+    font-size: 2em;
+    font-weight: 900;
+    margin-top: 2em;
+    text-align: center;
+    width: 100%;
+    /*border: dodgerblue solid;*/
+}
+
+.calendario_resumen_form .formButton {
+    margin-top: 2em;
+    box-shadow: #545454 10px  10px 5px;
+}
+.calendario_resumen_form .formButton:active {
+    box-shadow: #545454 5px  5px 5px;
+}

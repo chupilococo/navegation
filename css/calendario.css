@@ -1,0 +1,252 @@
+:root {
+	--color_danilo: #00d6aa;
+	--color_leandro: #ef767a;
+	--color_franco: #7d7abc;
+	--color_nicolas: #e40066;
+	--color_fernando: #fb4d3d;
+}
+
+
+.content {
+  color:white;
+  background-color: #333;
+  display: grid;
+  place-items: center;
+}
+
+.content section{
+	padding-top: 10vh;
+	height: 100vh;
+}
+
+.content .hero{
+	padding-top: 50vh; 
+	color: white;
+}
+.calendario_tittle{
+	text-align: center;
+}
+.calendario_content{
+	background-color: white;
+	height: 70vh;
+	width: 80vw;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+}
+
+
+
+
+.calendario_almanac{
+	color: gray;
+	height: 100%;
+	grid-column: 1/4;
+	display: grid;
+	grid-template-columns: repeat(9,1fr);
+	grid-template-rows: repeat(7,1fr);
+	text-align: center;
+}
+
+.calenadrio_almanac_prev{
+	grid-column: 1/3;
+}
+.calenadrio_almanac_title{
+	grid-column: 3/8;
+}
+.calenadrio_almanac_next{
+	grid-column: 8/10;
+}
+
+
+.calenadrio_almanac_next,.calenadrio_almanac_prev,.calenadrio_almanac_title {
+	font-size: 1em;
+	height: 100%;
+	line-height: 200%;
+}
+
+.calendario_almanac_grid{
+	grid-row: 2/7;
+	grid-column: 2/9;
+	display: grid;
+	grid-template-columns: repeat(7,1fr);
+	grid-template-rows: repeat(5,1fr);
+}
+
+
+.weekday>span{
+	font-size: 2em;
+}
+
+.weekday[data-owner]{
+	position: relative;
+}
+
+.weekday[data-owner]::before{
+	position: absolute;
+	display: grid;
+	place-items: center;
+	top: -2em;
+	left: 0;
+	right: 0;
+	transform:scale(1,0);
+	white-space: nowrap;
+	text-transform: uppercase;
+	height: 2em;
+	padding: .5em;
+	border-radius: 10px;
+	color: white;
+	content: attr(data-owner);
+	transition: transform 150ms ease-in-out;
+	transform-origin: bottom;
+	text-shadow: #333333 0 0 5px;
+	overflow: hidden;
+}
+
+.weekday[data-owner]::after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: .5em;
+	position: absolute;
+	top: -.5em;
+}
+
+.weekday[data-owner="franco"]::after, .weekday[data-owner="franco"]::before{
+	background-color: var(--color_franco);
+}
+.weekday[data-owner="fernando"]::after, .weekday[data-owner="fernando"]::before{
+	background-color: var(--color_fernando);
+}
+.weekday[data-owner="nicolas"]::after,.weekday[data-owner="nicolas"]::before{
+	background-color: var(--color_nicolas);
+}
+.weekday[data-owner="leandro"]::after,.weekday[data-owner="leandro"]::before{
+	background-color: var(--color_leandro);
+}
+.weekday[data-owner="danilo"]::after,.weekday[data-owner="danilo"]::before{
+	background-color: var(--color_danilo);
+}
+
+.weekday[data-owner]:hover::before{
+	transform: scale(1,1);
+}
+
+
+
+.calendario_usuarios{
+	grid-column: 4;
+	display: flex;
+	flex-direction: column;
+}
+
+.calendario_usuarios_usuario{
+	width:100%;
+	height: 100%;
+	font-size: 2em;
+	position: relative;
+}
+
+.calendario_usuarios_usuario::before {
+    content: '';
+    display: block;
+    height: .5em;
+    background: rgba(50,50,200,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+    transform-origin: left;
+}
+
+.calendario_usuarios_usuario:hover::before {
+    transform: scale(1,1);
+ }
+
+.calendario_usuarios_usuario::after{
+	content: '';
+	display: block;
+	height: 1em;
+	background: rgb(13, 170, 7);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: scale(0, 1);
+	transition: transform ease-in-out 250ms;
+	transform-origin: left;
+}
+
+
+.calendario_usuarios_usuario[data-guardia-selected="true"]::after {
+	transform: scale(1,1);
+}
+
+
+.calendario_usuarios_usuario p{
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	top: calc(50% - .5em);
+	margin: 0;
+	line-height: 100%;
+	text-align: center;
+	text-shadow: 0 0 5px black;
+}
+
+.calendario_usuarios_leandro{
+	background-color: var(--color_leandro);
+}
+.calendario_usuarios_franco{
+	background-color: var(--color_franco);
+}
+.calendario_usuarios_nicolas{
+	background-color: var(--color_nicolas);
+}
+.calendario_usuarios_nicolas::before{
+	text-align: center;
+}
+.calendario_usuarios_fernando{
+	background-color: var(--color_fernando);
+}
+.calendario_usuarios_danilo{
+	background-color: var(--color_danilo);
+}
+
+#mensajes{
+	width: 100%;
+	height: 2.5em;
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	bottom: 0;
+}
+
+#mensajes span {
+	transform-origin: bottom;
+	transition: height 1000ms ease-in;
+	overflow: hidden;
+	display: grid;
+	background-color: rgba(187, 100, 69, 0.85);
+	height: 0;
+	font-size: 2em;
+	font-weight: 900;
+	place-items: center;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+#mensajes .active{
+	height: 100%;
+}
+
+@media screen and (max-width: 900px){
+	#guardias, .calendario_content{
+		width: 100%;
+	}
+}
+
