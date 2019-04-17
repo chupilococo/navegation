@@ -163,10 +163,9 @@
                         <button class="formButton">Consultar</button>
                     </form>
                 </div>
-                <div id="formOutput" class="calendario_resumen_result">
-                    <table>
-                        <tbody></tbody>
-                    </table>
+                <div id="ResumenOutput" class="calendario_resumen_result">
+                    <div class="calendario_resumen_result_nombre"></div>
+                    <div class="calendario_resumen_result_dias"></div>
                 </div>
 			</div>
 		</section>

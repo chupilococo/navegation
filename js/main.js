@@ -279,13 +279,38 @@ DC.getDaysGrouped=function(anio,mes){
     DC.ajax({
         url:_API+'api/public/fecha/'+anio+'/'+("0"+mes).slice(-2),
         successCallback:function (rta) {
-            console.log(rta);
+
+            DC.drawResumen(JSON.parse(rta))
+
         },
-        errorCallback:function (rta) {
 
-            console.error(JSON.parse(rta));
-
+    errorCallback:function (rta) {
+            console.error(rta);
             DC.setMensajes('Error al recuperar los dias desde el servidor');
         }
     });
 };
+
+
+DC.drawResumen=function (json) {
+    resumenout=document.getElementById('ResumenOutput');
+    while (resumenout.hasChildNodes()) {
+        resumenout.removeChild(resumenout.lastChild);
+    }
+    for (x in json){
+        console.log(json[x]);
+        let div=document.createElement('div');
+        let p=document.createElement('p');
+            p.innerText=json[x].Nombre;
+            div.appendChild(p);
+
+        let div2=document.createElement('div');
+        let p2=document.createElement('p');
+            p2.innerText=json[x].DiasGuardia;
+            div2.appendChild(p2);
+            resumenout.appendChild(div);
+            resumenout.appendChild(div2);
+    }
+};
+
+
