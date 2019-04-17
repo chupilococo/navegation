@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/hero.css">
     <script src="js/main.js"></script>
     <script src="js/guardias.js"></script>
+    <script src="js/resumen.js"></script>
 <!--    <script src="js/ho.js"></script>-->
 	<title>navBar</title>
 </head>
@@ -141,9 +142,9 @@
 			<h2 class="calendario_tittle">Resumen Mensual</h2>
 			<div class="calendario_content_resumen">
                 <div class="calendario_resumen_form" >
-                    <form action="#">
+                    <form id="form-resumen" action="#">
                         <label for="mes">Mes</label>
-                            <select class="formInput" name="mes" id="mes">
+                            <select class="formInput" name="mes" id="Resumen-mes">
                                 <option value="1">Enero</option>
                                 <option value="2">Febrero</option>
                                 <option value="3">Marzo</option>
@@ -158,7 +159,7 @@
                                 <option value="12">Diciembre</option>
                             </select>
                         <label for="anio">Año</label>
-                        <input class="formInput" name="anio" id="anio" type="number" min="2018">
+                        <input class="formInput" name="anio" id="Resumen-anio" type="number" min="2018">
                         <button class="formButton">Consultar</button>
                     </form>
                 </div>

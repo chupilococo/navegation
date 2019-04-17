@@ -26,7 +26,7 @@
     grid-column: 1/4;
     grid-row: 1/7;
     display: grid;
-    border: darkred solid 2px;
+    /*border: darkred solid 2px;*/
 }
 
 

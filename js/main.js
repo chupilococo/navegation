@@ -282,7 +282,9 @@ DC.getDaysGrouped=function(anio,mes){
             console.log(rta);
         },
         errorCallback:function (rta) {
-            console.error(rta);
+
+            console.error(JSON.parse(rta));
+
             DC.setMensajes('Error al recuperar los dias desde el servidor');
         }
     });
